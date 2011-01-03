@@ -1,11 +1,11 @@
 # Thanks to Matt Swasey (http://www.viget.com/extend/simple-rails-or-ruby-application-configuration/)
-# for this OpenStruct technique.
+# for this OpenStruct technique.  It makes referencing the constants a little cleaner than using YAML.
 
 require 'ostruct'
 
 App = OpenStruct.new({
   :email => OpenStruct.new({
-    :address => 'you@example.com',
+    :address => 'admin@example.com',
     :password => 'secret'
   })
 })
