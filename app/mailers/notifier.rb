@@ -4,7 +4,7 @@ class Notifier < ActionMailer::Base
     @contact_message = contact_message
     
     # Return a new mail message
-    mail(:to => 'admin@example.com',
+    mail(:to => App.email.address,
          :from => contact_message.email,
          :subject => contact_message.subject)
   end

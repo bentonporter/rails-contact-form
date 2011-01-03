@@ -43,15 +43,5 @@ module RailsContactForm
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
-    
-    # Configure the mailer settings
-    config.action_mailer.delivery_method = :smtp 
-    config.action_mailer.raise_delivery_errors = false
-    config.action_mailer.smtp_settings = { :address => 'smtp.gmail.com', 
-                                           :port => 587, 
-                                           :user_name => 'admin@example.com', 
-                                           :password => 'secret', 
-                                           :authentication => 'plain', 
-                                           :enable_starttls_auto => true }
   end
 end
