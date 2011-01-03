@@ -1,14 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Sample Contact Form</title>
+  <title>Simple Contact Form</title>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <!-- TODO - Just a note that you could put this in a partial.  -->
+  <div id="contact">
+    <h2>Get in Touch!</h2>
+    <%= form_for @contact_message, :as => :contact_message, 
+                                   :url => { :controller => :contact_messages, :action => :create },
+                                   :remote => true do |f| %>
+      <p>
+        <%= f.label :email %>:
+      </p>
+      <p>
+        <%= f.text_field :email %>
+      </p>
+      <p>
+        <%= f.label :subject %>:
+      </p>
+      <p>
+        <%= f.text_field :subject %>
+      </p>
+      <p>
+        <%= f.label :message %>:
+      </p>
+      <p>
+        <%= f.text_area :body, :rows => 10 %>
+      </p>
+      <div id="bottom">
+        <%= f.submit "Send" %>
+        <div id="result">
+          <div class="notice"><%= escape_javascript(flash.delete(:notice)) %></div>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </body>
 </html>
