@@ -1,5 +1,7 @@
 RailsContactForm::Application.routes.draw do
 
-  root :to => "home#index"
+  get 'contact_messages/create'
+
+  root :to => 'home#index'
 
 end

@@ -1,8 +1,7 @@
 <div id="contact">
   <h2>Get in Touch!</h2>
   <%= form_for @contact_message, :as => :contact_message, 
-                                 :url => { :controller => :contact_messages, :action => :create },
-                                 :remote => true do |f| %>
+                                 :url => { :controller => :contact_messages, :action => :create } do |f| %>
     <p>
       <%= f.label :email %>:
     </p>
