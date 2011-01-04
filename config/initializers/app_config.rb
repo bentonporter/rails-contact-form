@@ -12,7 +12,7 @@ App = OpenStruct.new({
 
 # Configure the mailer settings
 RailsContactForm::Application.configure do
-  if RAILS_ENV != 'test'
+  if !Rails.env.test?
     config.action_mailer.delivery_method = :smtp 
     config.action_mailer.raise_delivery_errors = false
     config.action_mailer.smtp_settings = { :address => 'smtp.gmail.com', 
