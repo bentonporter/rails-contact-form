@@ -1,7 +1,8 @@
 <div id="contact">
   <h2>Get in Touch!</h2>
   <%= form_for @contact_message, :as => :contact_message, 
-                                 :url => { :controller => :contact_messages, :action => :create } do |f| %>
+                                 :url => { :controller => :contact_messages, :action => :create },
+                                 :remote => true do |f| %>
     <p>
       <%= f.label :email %>:
     </p>
@@ -22,9 +23,7 @@
     </p>
     <div id="bottom">
       <%= f.submit "Send" %>
-      <div id="result">
-        <div class="notice"><%= escape_javascript(flash.delete(:notice)) %></div>
-      </div>
+      <div id="result"></div>
     </div>
   <% end %>
 </div>
